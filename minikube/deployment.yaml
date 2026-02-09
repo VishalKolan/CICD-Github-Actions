@@ -13,7 +13,7 @@ spec:
                 app: my-protifolio
         spec:
             containers:
-                - name: Java-Gradle
+                - name: javagradle
                   imagePullPolicy: Never
                   image: kolan7416/java-gradle:latest
                   resources:
