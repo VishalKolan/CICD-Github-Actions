@@ -63,6 +63,11 @@ jobs:
         pwd
         kubectl apply -f minikube/deployment.yaml
         kubectl wait --for=condition=ready pod -l app=my-portfolio
+
+    - uses: actions/checkout@v4
+      with:
+        repository: medyagh/local-dev-example-with-minikube
+
     - name: Test service URLs
       run: |
         minikube service list
