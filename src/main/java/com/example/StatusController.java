@@ -9,159 +9,280 @@ public class StatusController {
 
     @GetMapping(value = "/", produces = MediaType.TEXT_HTML_VALUE)
     public String home() {
-        return "<!doctype html>"
-            + "<html lang=\"en\">"
-            + "<head>"
-            + "  <meta charset=\"utf-8\" />"
-            + "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />"
-            + "  <title>Profilio Vishal Kolan</title>"
-            + "  <meta name=\"description\" content=\"My first portfolio page.\" />"
-            + "  <style>"
-            + "    :root {"
-            + "      --ink: #111317;"
-            + "      --paper: #f7f2e9;"
-            + "      --sun: #f8c85e;"
-            + "      --clay: #d9815d;"
-            + "      --slate: #5a6b7a;"
-            + "      --shadow: rgba(17, 19, 23, 0.18);"
-            + "      --radius-lg: 24px;"
-            + "      --radius-md: 16px;"
-            + "    }"
-            + "    * { box-sizing: border-box; }"
-            + "    body {"
-            + "      margin: 0;"
-            + "      font-family: \"Space Grotesk\", system-ui, -apple-system, sans-serif;"
-            + "      color: var(--ink);"
-            + "      background:"
-            + "        radial-gradient(800px 400px at 10% -10%, #fdebd0 0%, transparent 70%),"
-            + "        radial-gradient(700px 500px at 110% 10%, #f7d8c6 0%, transparent 65%),"
-            + "        linear-gradient(180deg, #faf6f0 0%, #f0e9df 100%);"
-            + "      min-height: 100vh;"
-            + "    }"
-            + "    header { padding: 32px 24px 12px; }"
-            + "    .nav {"
-            + "      max-width: 1120px;"
-            + "      margin: 0 auto;"
-            + "      display: flex;"
-            + "      align-items: center;"
-            + "      justify-content: space-between;"
-            + "      gap: 16px;"
-            + "    }"
-            + "    .brand {"
-            + "      display: flex;"
-            + "      align-items: center;"
-            + "      gap: 12px;"
-            + "      font-weight: 700;"
-            + "      letter-spacing: 0.5px;"
-            + "    }"
-            + "    .brand-badge {"
-            + "      width: 40px;"
-            + "      height: 40px;"
-            + "      border-radius: 12px;"
-            + "      background: linear-gradient(135deg, var(--sun), var(--clay));"
-            + "      box-shadow: 0 12px 22px var(--shadow);"
-            + "      display: grid;"
-            + "      place-items: center;"
-            + "      font-weight: 700;"
-            + "    }"
-            + "    .hero {"
-            + "      max-width: 1120px;"
-            + "      margin: 0 auto;"
-            + "      padding: 48px 24px 64px;"
-            + "      display: grid;"
-            + "      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));"
-            + "      gap: 32px;"
-            + "      align-items: center;"
-            + "    }"
-            + "    .hero h1 {"
-            + "      font-family: \"Playfair Display\", serif;"
-            + "      font-size: clamp(2.6rem, 4vw, 4.1rem);"
-            + "      line-height: 1.05;"
-            + "      margin: 0 0 18px;"
-            + "    }"
-            + "    .hero p { color: var(--slate); font-size: 1.05rem; margin: 0 0 24px; }"
-            + "    .cta { display: flex; flex-wrap: wrap; gap: 14px; }"
-            + "    .btn {"
-            + "      border: none;"
-            + "      border-radius: 999px;"
-            + "      padding: 12px 22px;"
-            + "      font-weight: 600;"
-            + "      text-decoration: none;"
-            + "      display: inline-flex;"
-            + "      align-items: center;"
-            + "      gap: 8px;"
-            + "    }"
-            + "    .btn.primary { background: var(--ink); color: var(--paper); }"
-            + "    .btn.ghost { background: transparent; color: var(--ink); border: 1px solid rgba(17, 19, 23, 0.2); }"
-            + "    .panel {"
-            + "      background: rgba(255, 255, 255, 0.8);"
-            + "      border-radius: var(--radius-lg);"
-            + "      padding: 28px;"
-            + "      box-shadow: 0 20px 50px var(--shadow);"
-            + "    }"
-            + "    .grid {"
-            + "      display: grid;"
-            + "      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));"
-            + "      gap: 18px;"
-            + "    }"
-            + "    .card {"
-            + "      background: #fff;"
-            + "      border-radius: var(--radius-md);"
-            + "      padding: 20px;"
-            + "      border: 1px solid rgba(17, 19, 23, 0.08);"
-            + "      box-shadow: 0 10px 20px rgba(17, 19, 23, 0.08);"
-            + "    }"
-            + "    footer { padding: 24px; color: var(--slate); text-align: center; font-size: 0.9rem; }"
-            + "    @media (max-width: 860px) { .nav { flex-wrap: wrap; } }"
-            + "  </style>"
-            + "</head>"
-            + "<body>"
-            + "  <header>"
-            + "    <nav class=\"nav\">"
-            + "      <div class=\"brand\">"
-            + "        <div class=\"brand-badge\">VK</div>"
-            + "        <span>Profilio Vishal Kolan</span>"
-            + "      </div>"
-            + "    </nav>"
-            + "  </header>"
-            + "  <main>"
-            + "    <section class=\"hero\">"
-            + "      <div>"
-            + "        <p style=\"font-weight:600; color:#2c5d63;\">My first portfolio page</p>"
-            + "        <h1>Hello, I am Vishal Kolan.</h1>"
-            + "        <p>I build clean, reliable software and love learning new technologies.</p>"
-            + "        <div class=\"cta\">"
-            + "          <a class=\"btn primary\" href=\"#projects\">View projects</a>"
-            + "          <a class=\"btn ghost\" href=\"#contact\">Contact me</a>"
-            + "        </div>"
-            + "      </div>"
-            + "      <div class=\"panel\">"
-            + "        <h2>Quick intro</h2>"
-            + "        <p>Student / Developer | Java, Spring Boot, GitHub Actions</p>"
-            + "        <div class=\"grid\" style=\"margin-top:16px;\">"
-            + "          <div class=\"card\"><strong>Skills</strong><p>Java, Spring Boot, Git, Docker</p></div>"
-            + "          <div class=\"card\"><strong>Focus</strong><p>CI/CD, clean APIs, reliability</p></div>"
-            + "        </div>"
-            + "      </div>"
-            + "    </section>"
-            + "    <section id=\"projects\" style=\"max-width:1120px;margin:0 auto;padding:0 24px 48px;\">"
-            + "      <h2>Projects</h2>"
-            + "      <div class=\"grid\">"
-            + "        <div class=\"card\"><h3>CI/CD Demo App</h3><p>Automated builds and Docker packaging.</p></div>"
-            + "        <div class=\"card\"><h3>Portfolio Page</h3><p>A simple and modern personal landing page.</p></div>"
-            + "        <div class=\"card\"><h3>Next Project</h3><p>Coming soon.</p></div>"
-            + "      </div>"
-            + "    </section>"
-            + "    <section id=\"contact\" style=\"max-width:1120px;margin:0 auto;padding:0 24px 64px;\">"
-            + "      <div class=\"panel\">"
-            + "        <h2>Contact</h2>"
-            + "        <p>Email: vkreddy7416@gamil.com</p>"
-            + "      </div>"
-            + "    </section>"
-            + "  </main>"
-            + "  <footer>Profilio Vishal Kolan</footer>"
-            + "</body>"
-            + "</html>";
+        return String.join("\n",
+            "<!doctype html>",
+            "<html lang=\"en\">",
+            "<head>",
+            "  <meta charset=\"utf-8\" />",
+            "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />",
+            "  <title>Profilio Vishal Kolan</title>",
+            "  <meta name=\"description\" content=\"Senior DevOps / Platform Engineer portfolio.\" />",
+            "  <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />",
+            "  <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin />",
+            "  <link href=\"https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Space+Grotesk:wght@300;400;600;700&display=swap\" rel=\"stylesheet\" />",
+            "  <style>",
+            "    :root {",
+            "      --ink: #111317;",
+            "      --paper: #f7f2e9;",
+            "      --sun: #f8c85e;",
+            "      --clay: #d9815d;",
+            "      --slate: #5a6b7a;",
+            "      --sea: #2c5d63;",
+            "      --shadow: rgba(17, 19, 23, 0.18);",
+            "      --radius-lg: 24px;",
+            "      --radius-md: 16px;",
+            "      --radius-sm: 10px;",
+            "      --max: 1120px;",
+            "    }",
+            "    * { box-sizing: border-box; }",
+            "    body {",
+            "      margin: 0;",
+            "      font-family: \"Space Grotesk\", system-ui, -apple-system, sans-serif;",
+            "      color: var(--ink);",
+            "      background:",
+            "        radial-gradient(800px 400px at 10% -10%, #fdebd0 0%, transparent 70%),",
+            "        radial-gradient(700px 500px at 110% 10%, #f7d8c6 0%, transparent 65%),",
+            "        linear-gradient(180deg, #faf6f0 0%, #f0e9df 100%);",
+            "      min-height: 100vh;",
+            "    }",
+            "    .noise {",
+            "      position: fixed;",
+            "      inset: 0;",
+            "      pointer-events: none;",
+            "      opacity: 0.07;",
+            "      mix-blend-mode: multiply;",
+            "      background-image: url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E\");",
+            "    }",
+            "    header { padding: 32px 24px 12px; }",
+            "    .nav {",
+            "      max-width: var(--max);",
+            "      margin: 0 auto;",
+            "      display: flex;",
+            "      align-items: center;",
+            "      justify-content: space-between;",
+            "      gap: 16px;",
+            "    }",
+            "    .brand {",
+            "      display: flex;",
+            "      align-items: center;",
+            "      gap: 12px;",
+            "      font-weight: 700;",
+            "      letter-spacing: 0.5px;",
+            "    }",
+            "    .brand-badge {",
+            "      width: 40px;",
+            "      height: 40px;",
+            "      border-radius: 12px;",
+            "      background: linear-gradient(135deg, var(--sun), var(--clay));",
+            "      box-shadow: 0 12px 22px var(--shadow);",
+            "      display: grid;",
+            "      place-items: center;",
+            "      font-weight: 700;",
+            "    }",
+            "    .nav-links {",
+            "      display: flex;",
+            "      gap: 18px;",
+            "      font-size: 0.95rem;",
+            "      color: var(--slate);",
+            "    }",
+            "    .nav-links a { text-decoration: none; color: inherit; }",
+            "    .hero {",
+            "      max-width: var(--max);",
+            "      margin: 0 auto;",
+            "      padding: 48px 24px 48px;",
+            "      display: grid;",
+            "      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));",
+            "      gap: 32px;",
+            "      align-items: center;",
+            "    }",
+            "    .hero h1 {",
+            "      font-family: \"Playfair Display\", serif;",
+            "      font-size: clamp(2.6rem, 4vw, 4.1rem);",
+            "      line-height: 1.05;",
+            "      margin: 0 0 18px;",
+            "    }",
+            "    .hero p { color: var(--slate); font-size: 1.05rem; margin: 0 0 24px; }",
+            "    .pill {",
+            "      display: inline-flex;",
+            "      align-items: center;",
+            "      gap: 8px;",
+            "      font-size: 0.85rem;",
+            "      padding: 6px 12px;",
+            "      border-radius: 999px;",
+            "      background: #f6efe4;",
+            "      color: var(--sea);",
+            "      font-weight: 600;",
+            "    }",
+            "    .cta { display: flex; flex-wrap: wrap; gap: 14px; }",
+            "    .btn {",
+            "      border: none;",
+            "      border-radius: 999px;",
+            "      padding: 12px 22px;",
+            "      font-weight: 600;",
+            "      cursor: pointer;",
+            "      text-decoration: none;",
+            "      display: inline-flex;",
+            "      align-items: center;",
+            "      gap: 8px;",
+            "    }",
+            "    .btn.primary { background: var(--ink); color: var(--paper); box-shadow: 0 12px 20px rgba(17, 19, 23, 0.2); }",
+            "    .btn.ghost { background: transparent; color: var(--ink); border: 1px solid rgba(17, 19, 23, 0.2); }",
+            "    .panel {",
+            "      background: rgba(255, 255, 255, 0.8);",
+            "      border-radius: var(--radius-lg);",
+            "      padding: 28px;",
+            "      box-shadow: 0 20px 50px var(--shadow);",
+            "      backdrop-filter: blur(8px);",
+            "    }",
+            "    .section { max-width: var(--max); margin: 0 auto; padding: 12px 24px 56px; }",
+            "    .section h2 { font-size: 1.8rem; margin: 0 0 16px; }",
+            "    .grid {",
+            "      display: grid;",
+            "      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));",
+            "      gap: 18px;",
+            "    }",
+            "    .card {",
+            "      background: #fff;",
+            "      border-radius: var(--radius-md);",
+            "      padding: 20px;",
+            "      border: 1px solid rgba(17, 19, 23, 0.08);",
+            "      box-shadow: 0 10px 20px rgba(17, 19, 23, 0.08);",
+            "    }",
+            "    .timeline { display: grid; gap: 16px; }",
+            "    .role {",
+            "      background: #fffdf8;",
+            "      border-radius: var(--radius-md);",
+            "      padding: 18px;",
+            "      border: 1px solid rgba(17, 19, 23, 0.08);",
+            "    }",
+            "    .role h3 { margin: 0 0 6px; }",
+            "    .role ul { margin: 10px 0 0 18px; padding: 0; color: var(--slate); }",
+            "    .contact { display: grid; gap: 10px; }",
+            "    footer { padding: 24px; color: var(--slate); text-align: center; font-size: 0.9rem; }",
+            "    @media (max-width: 860px) { .nav-links { display: none; } }",
+            "  </style>",
+            "</head>",
+            "<body>",
+            "  <div class=\"noise\"></div>",
+            "  <header>",
+            "    <nav class=\"nav\">",
+            "      <div class=\"brand\">",
+            "        <div class=\"brand-badge\">VK</div>",
+            "        <span>Profilio Vishal Kolan</span>",
+            "      </div>",
+            "      <div class=\"nav-links\">",
+            "        <a href=\"#skills\">Skills</a>",
+            "        <a href=\"#experience\">Experience</a>",
+            "        <a href=\"#contact\">Contact</a>",
+            "      </div>",
+            "    </nav>",
+            "  </header>",
+            "  <main>",
+            "    <section class=\"hero\">",
+            "      <div>",
+            "        <p class=\"pill\">Senior DevOps / Platform Engineer</p>",
+            "        <h1>Vishal Reddy Kolan</h1>",
+            "        <p>8+ years designing, building, migrating, and operating large-scale cloud and Kubernetes platforms across AWS, Google Cloud, Azure, and on-prem environments.</p>",
+            "        <div class=\"cta\">",
+            "          <a class=\"btn primary\" href=\"#experience\">View experience</a>",
+            "          <a class=\"btn ghost\" href=\"#contact\">Contact</a>",
+            "        </div>",
+            "      </div>",
+            "      <div class=\"panel\">",
+            "        <h2>Professional summary</h2>",
+            "        <p>Independent contributor in contract engagements, owning end-to-end delivery across infrastructure, CI/CD, observability, and security.</p>",
+            "        <div class=\"grid\" style=\"margin-top:16px;\">",
+            "          <div class=\"card\"><strong>Cloud</strong><p>AWS, GCP, Azure, on-prem</p></div>",
+            "          <div class=\"card\"><strong>Platform</strong><p>Kubernetes, Helm, Istio</p></div>",
+            "          <div class=\"card\"><strong>IaC</strong><p>Terraform, Terragrunt, CloudFormation</p></div>",
+            "        </div>",
+            "      </div>",
+            "    </section>",
+            "",
+            "    <section id=\"skills\" class=\"section\">",
+            "      <h2>Core technical skills</h2>",
+            "      <div class=\"grid\">",
+            "        <div class=\"card\"><h3>Cloud platforms</h3><p>AWS (EKS, EC2, VPC, ALB/NLB, Route53, NAT), Google Cloud (GKE, VPC, IAM, Cloud Monitoring, BigQuery, Looker Studio, PSC/PSA), Azure (AKS, VNets, Data Factory, Databricks)</p></div>",
+            "        <div class=\"card\"><h3>Kubernetes & platform</h3><p>Kubernetes (EKS/GKE/AKS/on-prem), Docker, Helm advanced templating, Istio, NGINX/Envoy Ingress</p></div>",
+            "        <div class=\"card\"><h3>Infrastructure as Code</h3><p>Terraform, Terragrunt, CloudFormation, ARM Templates</p></div>",
+            "        <div class=\"card\"><h3>CI/CD & release</h3><p>Screwdriver, Jenkins, GitHub, GitLab, Azure DevOps, Bamboo, Artifactory, Nexus</p></div>",
+            "        <div class=\"card\"><h3>Observability & data</h3><p>Google Managed Prometheus, PromQL, Grafana, ELK Stack, Splunk, Cloud Monitoring, BigQuery, Looker Studio</p></div>",
+            "        <div class=\"card\"><h3>Security & automation</h3><p>IAM, RBAC, Athenz, SIA certificates, mTLS, network policies, Python, Bash, Shell, SQL</p></div>",
+            "        <div class=\"card\"><h3>AI-assisted engineering</h3><p>Cursor, Claude, GitHub Copilot, CodeX</p></div>",
+            "      </div>",
+            "    </section>",
+            "",
+            "    <section id=\"experience\" class=\"section\">",
+            "      <h2>Professional experience</h2>",
+            "      <div class=\"timeline\">",
+            "        <div class=\"role\">",
+            "          <h3>Yahoo - Senior DevOps / Platform Engineer (2021 - Present)</h3>",
+            "          <ul>",
+            "            <li>Owned day-to-day operations of a multi-tenant Kubernetes fleet (100+ clusters) across regions.</li>",
+            "            <li>Built AWS EKS clusters from scratch including VPC planning, subnets, gateways, and security controls.</li>",
+            "            <li>Implemented Istio service mesh with mTLS, traffic routing, canary deployments, retries, and telemetry.</li>",
+            "            <li>Authored reusable Terraform modules for clusters, firewall rules, PSC/PSA, DNS private zones, monitoring.</li>",
+            "            <li>Built Helm charts with multi-tenant deployments, overrides, and safe rollout strategies.</li>",
+            "            <li>Led compute and node pool migrations, cost optimization, and capacity planning dashboards.</li>",
+            "          </ul>",
+            "        </div>",
+            "        <div class=\"role\">",
+            "          <h3>Dell - DevOps Engineer (Aug 2020 - Aug 2021)</h3>",
+            "          <ul>",
+            "            <li>Automated Azure infrastructure provisioning using Terraform and ARM templates.</li>",
+            "            <li>Built CI/CD pipelines with Jenkins, Maven, Docker, Artifactory, Bitbucket, and GitLab.</li>",
+            "            <li>Deployed microservices on AKS with autoscaling, rolling upgrades, and blue/green deployments.</li>",
+            "            <li>Implemented Azure Data Factory pipelines and Databricks jobs for data migration workloads.</li>",
+            "          </ul>",
+            "        </div>",
+            "        <div class=\"role\">",
+            "          <h3>Qubole - DevOps Engineer (Jan 2020 - Aug 2020)</h3>",
+            "          <ul>",
+            "            <li>Migrated AWS CloudFormation stacks to Terraform and Terragrunt.</li>",
+            "            <li>Designed and supported Kubernetes clusters on AWS EKS and Google GKE.</li>",
+            "            <li>Implemented CI/CD pipelines using Jenkins, GitHub, GitLab, and Spinnaker.</li>",
+            "            <li>Deployed ELK Stack and built Kibana dashboards for observability.</li>",
+            "          </ul>",
+            "        </div>",
+            "        <div class=\"role\">",
+            "          <h3>UAE Exchange - DevOps Engineer (Oct 2017 - Dec 2019)</h3>",
+            "          <ul>",
+            "            <li>Built Jenkins-based CI/CD pipelines for Java, Spring Boot, and Node.js applications.</li>",
+            "            <li>Containerized monoliths and migrated to Kubernetes microservices.</li>",
+            "            <li>Centralized logs from 5,000+ servers with Splunk and GCP logging.</li>",
+            "          </ul>",
+            "        </div>",
+            "        <div class=\"role\">",
+            "          <h3>A3IT Solutions - Build & Release Engineer (Oct 2016 - Sep 2017)</h3>",
+            "          <ul>",
+            "            <li>Managed Linux infrastructure, automation scripts, and release processes.</li>",
+            "            <li>Installed and maintained Apache and Tomcat servers.</li>",
+            "            <li>Supported enterprise networking services: DNS, DHCP, NFS, LDAP, SSH.</li>",
+            "          </ul>",
+            "        </div>",
+            "      </div>",
+            "    </section>",
+            "",
+            "    <section class=\"section\">",
+            "      <h2>Education</h2>",
+            "      <div class=\"card\">Bachelor's Degree in Engineering</div>",
+            "    </section>",
+            "",
+            "    <section id=\"contact\" class=\"section\">",
+            "      <div class=\"panel\">",
+            "        <h2>Contact</h2>",
+            "        <div class=\"contact\">",
+            "          <div>United States</div>",
+            "          <div>Email: VKreddy7416@gmail.com</div>",
+            "          <div>Phone: (657) 999-2143</div>",
+            "        </div>",
+            "      </div>",
+            "    </section>",
+            "  </main>",
+            "  <footer>Profilio Vishal Kolan - Senior DevOps / Platform Engineer</footer>",
+            "</body>",
+            "</html>"
+        );
     }
 
     @GetMapping("/status")
