@@ -168,7 +168,7 @@ public class StatusController {
             "    <nav class=\"nav\">",
             "      <div class=\"brand\">",
             "        <div class=\"brand-badge\">VK</div>",
-            "        <span>Profilio Vishal Kolan</span>",
+            "        <span> Vishal Kolan</span>",
             "      </div>",
             "      <div class=\"nav-links\">",
             "        <a href=\"#skills\">Skills</a>",
@@ -279,7 +279,7 @@ public class StatusController {
             "      </div>",
             "    </section>",
             "  </main>",
-            "  <footer>Profilio Vishal Kolan - Senior DevOps / Platform Engineer</footer>",
+            "  <footer> Vishal Kolan - Senior DevOps / Platform Engineer</footer>",
             "</body>",
             "</html>"
         );
