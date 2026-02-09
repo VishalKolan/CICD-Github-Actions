@@ -1,0 +1,7 @@
+.git
+.gradle
+**/.idea
+**/*.iml
+
+# keep build output because Dockerfile copies build/libs/*.jar
+# (do NOT ignore build/)
