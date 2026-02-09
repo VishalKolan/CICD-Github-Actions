@@ -58,7 +58,7 @@ jobs:
 
     - name: Deploy to minikube
       run: |
-        kubectl apply -f deploy/k8s.yaml
+        kubectl apply -f minikube/deploymentyaml
         kubectl wait --for=condition=ready pod -l app=my-portfolio
     - name: Test service URLs
       run: |
