@@ -48,24 +48,24 @@ jobs:
           kolan7416/java-gradle:latest
           kolan7416/java-gradle:v1
 
-    # - uses: actions/checkout@v4
-    #   with:
-    #     repository: medyagh/local-dev-example-with-minikube
-    # - name: Start minikube
-    #   uses: medyagh/setup-minikube@latest
-    # - name: Try the cluster!
-    #   run: kubectl get pods -A
+    - uses: actions/checkout@v4
+      with:
+        repository: medyagh/local-dev-example-with-minikube
+    - name: Start minikube
+      uses: medyagh/setup-minikube@latest
+    - name: Try the cluster!
+      run: kubectl get pods -A
 
     - uses: actions/checkout@v4
 
     - name: Deploy to minikube
       run: |
         pwd
-        kubectl apply -f minikube/deploymentyaml
+        kubectl apply -f minikube/deployment.yaml
         kubectl wait --for=condition=ready pod -l app=my-portfolio
-    # - name: Test service URLs
-    #   run: |
-    #     minikube service list
-    #     minikube service my-portfolio-service --url
-    #     echo "------------------opening the service------------------"
-    #     curl $(minikube service my-portfolio-service --url)
+    - name: Test service URLs
+      run: |
+        minikube service list
+        minikube service my-portfolio-service --url
+        echo "------------------opening the service------------------"
+        curl $(minikube service my-portfolio-service --url)
